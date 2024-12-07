@@ -15,7 +15,7 @@ const Identity = () => {
     <SafeAreaView style={styles.safe}>
       <>
         <View style={styles.main}>
-          <Stages />
+          <Stages stage={1} />
           <Header
             text={'Identity Verification'}
             rightComponent={<InfoIcon />}

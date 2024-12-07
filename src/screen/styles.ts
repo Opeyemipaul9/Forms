@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingLeft: 7,
+    paddingRight: 7,
   },
   progressFull: {
     width: 392,
