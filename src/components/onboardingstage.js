@@ -4,18 +4,6 @@ import {StyleSheet, View} from 'react-native';
 const Stages = ({stage}) => {
   const progressArray = [1, 2, 3, 4, 5];
   const progressStages = progressArray.map((_, index) => {
-    // if (stage > index) {
-    //   return (
-    //     <View key={index} style={[styles.progressWidth, styles.active]}></View>
-    //   );
-    // } else {
-    //   return (
-    //     <View
-    //       key={index}
-    //       style={[styles.progressWidth, styles.inactive]}></View>
-    //   );
-    // }
-
     return (
       <View
         key={index}

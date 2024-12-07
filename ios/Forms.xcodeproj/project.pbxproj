@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FormsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FormsTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-Forms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Forms.a */; };
+		11452B86B7FA4FCC8ABE0017 /* MatterSQ-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EEDBD5F34D64C66A0D96E23 /* MatterSQ-Light.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-Forms-FormsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Forms-FormsTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9FF0FFCA2CA521BA379BFA4A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		7FAA5FA027DD46A8B1790777 /* MatterSQ-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 235C819456C944E78792DDAB /* MatterSQ-Bold.ttf */; };
-		8836BD7B83B34B879C88B355 /* MatterSQ-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A451AA096ED14F7594B90A45 /* MatterSQ-Heavy.ttf */; };
-		11452B86B7FA4FCC8ABE0017 /* MatterSQ-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EEDBD5F34D64C66A0D96E23 /* MatterSQ-Light.ttf */; };
 		18FC0578990F4785B1DDB215 /* MatterSQ-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D18FC594AF48EFA7A67F2F /* MatterSQ-Medium.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-Forms-FormsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Forms-FormsTests.a */; };
 		7C6E43BFC3744A7A815E0945 /* MatterSQ-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BFF79CE4EB2412280BFE6E9 /* MatterSQ-Regular.ttf */; };
+		7FAA5FA027DD46A8B1790777 /* MatterSQ-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 235C819456C944E78792DDAB /* MatterSQ-Bold.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8836BD7B83B34B879C88B355 /* MatterSQ-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A451AA096ED14F7594B90A45 /* MatterSQ-Heavy.ttf */; };
+		9FF0FFCA2CA521BA379BFA4A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		D213FBA7CCAD452B81983427 /* MatterSQ-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E63C99A19D914A2D89A6C6A7 /* MatterSQ-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -45,19 +45,19 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Forms/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Forms/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Forms-FormsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Forms-FormsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		235C819456C944E78792DDAB /* MatterSQ-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MatterSQ-Bold.ttf"; path = "../src/assets/fonts/MatterSQ-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Forms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms.debug.xcconfig"; path = "Target Support Files/Pods-Forms/Pods-Forms.debug.xcconfig"; sourceTree = "<group>"; };
+		3BFF79CE4EB2412280BFE6E9 /* MatterSQ-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MatterSQ-Regular.ttf"; path = "../src/assets/fonts/MatterSQ-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Forms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms.release.xcconfig"; path = "Target Support Files/Pods-Forms/Pods-Forms.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Forms-FormsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms-FormsTests.debug.xcconfig"; path = "Target Support Files/Pods-Forms-FormsTests/Pods-Forms-FormsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Forms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Forms.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Forms/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85D18FC594AF48EFA7A67F2F /* MatterSQ-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MatterSQ-Medium.ttf"; path = "../src/assets/fonts/MatterSQ-Medium.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Forms-FormsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms-FormsTests.release.xcconfig"; path = "Target Support Files/Pods-Forms-FormsTests/Pods-Forms-FormsTests.release.xcconfig"; sourceTree = "<group>"; };
+		9EEDBD5F34D64C66A0D96E23 /* MatterSQ-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MatterSQ-Light.ttf"; path = "../src/assets/fonts/MatterSQ-Light.ttf"; sourceTree = "<group>"; };
+		A451AA096ED14F7594B90A45 /* MatterSQ-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MatterSQ-Heavy.ttf"; path = "../src/assets/fonts/MatterSQ-Heavy.ttf"; sourceTree = "<group>"; };
+		E63C99A19D914A2D89A6C6A7 /* MatterSQ-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MatterSQ-SemiBold.ttf"; path = "../src/assets/fonts/MatterSQ-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		235C819456C944E78792DDAB /* MatterSQ-Bold.ttf */ = {isa = PBXFileReference; name = "MatterSQ-Bold.ttf"; path = "../src/assets/fonts/MatterSQ-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A451AA096ED14F7594B90A45 /* MatterSQ-Heavy.ttf */ = {isa = PBXFileReference; name = "MatterSQ-Heavy.ttf"; path = "../src/assets/fonts/MatterSQ-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9EEDBD5F34D64C66A0D96E23 /* MatterSQ-Light.ttf */ = {isa = PBXFileReference; name = "MatterSQ-Light.ttf"; path = "../src/assets/fonts/MatterSQ-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		85D18FC594AF48EFA7A67F2F /* MatterSQ-Medium.ttf */ = {isa = PBXFileReference; name = "MatterSQ-Medium.ttf"; path = "../src/assets/fonts/MatterSQ-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3BFF79CE4EB2412280BFE6E9 /* MatterSQ-Regular.ttf */ = {isa = PBXFileReference; name = "MatterSQ-Regular.ttf"; path = "../src/assets/fonts/MatterSQ-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E63C99A19D914A2D89A6C6A7 /* MatterSQ-SemiBold.ttf */ = {isa = PBXFileReference; name = "MatterSQ-SemiBold.ttf"; path = "../src/assets/fonts/MatterSQ-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +153,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		85C925F59E334A4F990D7FA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				235C819456C944E78792DDAB /* MatterSQ-Bold.ttf */,
+				A451AA096ED14F7594B90A45 /* MatterSQ-Heavy.ttf */,
+				9EEDBD5F34D64C66A0D96E23 /* MatterSQ-Light.ttf */,
+				85D18FC594AF48EFA7A67F2F /* MatterSQ-Medium.ttf */,
+				3BFF79CE4EB2412280BFE6E9 /* MatterSQ-Regular.ttf */,
+				E63C99A19D914A2D89A6C6A7 /* MatterSQ-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,20 +177,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		85C925F59E334A4F990D7FA2 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				235C819456C944E78792DDAB /* MatterSQ-Bold.ttf */,
-				A451AA096ED14F7594B90A45 /* MatterSQ-Heavy.ttf */,
-				9EEDBD5F34D64C66A0D96E23 /* MatterSQ-Light.ttf */,
-				85D18FC594AF48EFA7A67F2F /* MatterSQ-Medium.ttf */,
-				3BFF79CE4EB2412280BFE6E9 /* MatterSQ-Regular.ttf */,
-				E63C99A19D914A2D89A6C6A7 /* MatterSQ-SemiBold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
