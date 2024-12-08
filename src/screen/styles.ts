@@ -36,15 +36,17 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
   firstText: {
-    fontSize: 15,
+    fontSize: 18,
     lineHeight: 23,
     letterSpacing: -0.12,
     color: '#50555E',
   },
   miniContainer: {
-    justifyContent: 'center',
     alignItems: 'center',
-    gap: 7,
+    flexDirection: 'row',
+    marginRight: 20,
+    marginLeft: 20,
+    marginBottom: 10,
   },
   identityText: {
     fontSize: 18,
@@ -52,13 +54,15 @@ const styles = StyleSheet.create({
     lineHeight: 26,
     letterSpacing: -0.2,
     fontWeight: '600',
-    fontFamily: 'MatterSQRegular',
+    marginLeft: 85,
+    marginRight: 73,
   },
   about: {
     color: '#50555E',
     lineHeight: 21,
     letterSpacing: -0.12,
     fontSize: 14,
+    alignSelf: 'center',
   },
   upload: {
     gap: 10,
@@ -108,6 +112,7 @@ const styles = StyleSheet.create({
     marginTop: 70,
     marginLeft: 24,
     marginRight: 24,
+    width: 100,
   },
   buttonText: {
     fontSize: 16,
@@ -127,6 +132,27 @@ const styles = StyleSheet.create({
   },
   checkStyle: {
     marginRight: 10,
+  },
+  modalStyle: {
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    height: 200,
+  },
+  modalView: {
+    height: 550,
+    width: 430,
+    paddingLeft: 24,
+    paddingRight: 24,
+    backgroundColor: 'white',
+    borderRadius: 25,
+    paddingTop: 20,
+    marginBottom: -15,
+  },
+  left: {
+    fontSize: 12,
+    letterSpacing: -0.12,
+    lineHeight: 22,
+    color: '#7B828E',
   },
 });
 
