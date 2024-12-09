@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
+import styles from '../screen/styles';
 
 const Stages = ({stage}) => {
   const progressArray = [1, 2, 3, 4, 5];
@@ -18,21 +19,3 @@ const Stages = ({stage}) => {
 };
 
 export default Stages;
-
-const styles = StyleSheet.create({
-  progressFull: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  progressWidth: {
-    width: '18%',
-    borderRadius: 7,
-    height: 3,
-  },
-  active: {
-    backgroundColor: '#108e43',
-  },
-  inactive: {
-    backgroundColor: '#d9d9d9',
-  },
-});

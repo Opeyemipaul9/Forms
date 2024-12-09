@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import {LinearGradient} from 'react-native-svg';
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 
@@ -19,26 +20,23 @@ const styles = StyleSheet.create({
     paddingRight: 7,
   },
   progressFull: {
-    width: 392,
+    justifyContent: 'space-around',
     flexDirection: 'row',
   },
 
-  progressfirst: {
-    width: 70,
-    backgroundColor: '#108e43',
+  progressWidth: {
+    width: '18%',
     borderRadius: 7,
     height: 3,
-    marginRight: 6,
   },
-  progressSecond: {
-    width: 65,
+  inactive: {
     backgroundColor: '#d9d9d9',
-    borderRadius: 7,
-    height: 3,
-    marginRight: 6,
+  },
+  active: {
+    backgroundColor: 'green',
   },
   firstText: {
-    fontSize: 18,
+    fontSize: 15,
     lineHeight: 23,
     letterSpacing: -0.12,
     color: '#50555E',
@@ -71,7 +69,7 @@ const styles = StyleSheet.create({
     fontFamily: 'MatterSQ-Regular',
   },
   upload: {
-    gap: 10,
+    gap: 15,
     marginLeft: 19,
     marginRight: 68,
     width: 338,
@@ -81,7 +79,7 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   valid: {
-    fontSize: 14,
+    fontSize: 13,
     lineHeight: 21,
     letterSpacing: -0.12,
     color: '#656B76',
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textFile: {
-    fontSize: 15,
+    fontSize: 14,
     lineHeight: 19,
     letterSpacing: -0.11,
     color: '#656B76',
@@ -121,7 +119,7 @@ const styles = StyleSheet.create({
     // width: 100,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#F9FAFA',
     lineHeight: 23,
     letterSpacing: -0.12,
@@ -130,6 +128,7 @@ const styles = StyleSheet.create({
     gap: 15,
     marginLeft: 19,
     marginRight: 19,
+    marginTop: 40, // optional //
   },
   checkContianer: {
     flexDirection: 'row',
@@ -186,6 +185,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     gap: 15,
     width: 325,
+    // backgroundColor: LinearGradient( 135deg , or)
   },
 
   mainImage: {

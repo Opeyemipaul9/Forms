@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import styles from '../screen/styles';
-import Close from '../assets/icon/close.svg';
 
 const Info = ({textPrimary, textSec, rightComponent, leftComponent}) => {
   return (

@@ -4,6 +4,7 @@ import styles from '../screen/styles';
 import Logo from '../assets/icon/Logo.svg';
 import Button from './Button';
 import Quote from '../assets/icon/quote.svg';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Homepage = () => {
   return (
