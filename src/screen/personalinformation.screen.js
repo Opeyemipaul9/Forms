@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, StyleSheet, SafeAreaView} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import Input from '../components/Input';
 import InfoIcon from '../../src/assets/icon/info.svg';
 import CloseIcon from '../../src/assets/icon/close.svg';

@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
+
+const screenWidth = Math.round(Dimensions.get('window').width);
 
 const styles = StyleSheet.create({
   safe: {
@@ -44,32 +46,35 @@ const styles = StyleSheet.create({
   miniContainer: {
     alignItems: 'center',
     flexDirection: 'row',
-    marginRight: 20,
-    marginLeft: 20,
+    // marginRight: 20,
+    // marginLeft: 20,
     marginBottom: 10,
+    justifyContent: 'space-between',
   },
   identityText: {
     fontSize: 18,
     color: '#1A1C1F',
     lineHeight: 26,
-    letterSpacing: -0.2,
+    // letterSpacing: -0.2,
     fontWeight: '600',
-    marginLeft: 85,
-    marginRight: 73,
+    // marginLeft: 88,
+    // marginRight: 73,
+    textAlign: 'center',
+    fontFamily: 'MatterSQ-Regular',
   },
   about: {
     color: '#50555E',
     lineHeight: 21,
     letterSpacing: -0.12,
     fontSize: 14,
-    alignSelf: 'center',
+    textAlign: 'center',
+    fontFamily: 'MatterSQ-Regular',
   },
   upload: {
     gap: 10,
     marginLeft: 19,
     marginRight: 68,
     width: 338,
-
     marginTop: 30,
   },
   innerUpload: {
@@ -80,13 +85,14 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     letterSpacing: -0.12,
     color: '#656B76',
+    fontFamily: 'MatterSQ-Regular',
   },
   support: {
     fontSize: 10,
     letterSpacing: -0.06,
     lineHeight: 15,
     color: '#50555E',
-    fontFamily: 'MatterSQ-Bold',
+    fontFamily: 'MatterSQ-Regular',
   },
   file: {
     width: 149,
@@ -102,6 +108,7 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: -0.11,
     color: '#656B76',
+    fontFamily: 'MatterSQ-Regular',
   },
   button: {
     alignItems: 'center',
@@ -109,10 +116,9 @@ const styles = StyleSheet.create({
     height: 58,
     borderRadius: 8,
     backgroundColor: 'black',
-    marginTop: 70,
-    marginLeft: 24,
-    marginRight: 24,
-    width: 100,
+    // marginLeft: 24,
+    // marginRight: 24,
+    // width: 100,
   },
   buttonText: {
     fontSize: 16,
@@ -124,7 +130,6 @@ const styles = StyleSheet.create({
     gap: 15,
     marginLeft: 19,
     marginRight: 19,
-    marginTop: 60,
   },
   checkContianer: {
     flexDirection: 'row',
@@ -135,24 +140,88 @@ const styles = StyleSheet.create({
   },
   modalStyle: {
     justifyContent: 'flex-end',
-    alignItems: 'center',
-    height: 200,
+    // alignItems: 'center',
+    // height: 200,
   },
   modalView: {
-    height: 550,
-    width: 430,
+    // height: 550,
+    // width: 430,
     paddingLeft: 24,
     paddingRight: 24,
     backgroundColor: 'white',
-    borderRadius: 25,
+    // flex: 1,
     paddingTop: 20,
     marginBottom: -15,
+    paddingBottom: 25,
+    borderWidth: 2,
+    borderColor: 'red',
+    width: screenWidth,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
   left: {
     fontSize: 12,
-    letterSpacing: -0.12,
+    // letterSpacing: -0.12,
     lineHeight: 22,
     color: '#7B828E',
+    // marginRight: -10,
+  },
+  testimonial: {
+    fontSize: 15,
+    color: '#FFFFFF',
+
+    marginBottom: 10,
+    letterSpacing: -0.39,
+    fontWeight: 'light',
+  },
+  ceoName: {
+    fontSize: 12,
+    color: '#FFF',
+  },
+  overlay: {
+    position: 'absolute',
+    bottom: 20,
+    left: 20,
+    right: 20,
+    marginBottom: 10,
+    gap: 15,
+    width: 325,
+  },
+
+  mainImage: {
+    width: '100%',
+    height: '100%',
+  },
+  imageContainer: {
+    width: screenWidth,
+    height: 520,
+    position: 'relative',
+    backgroundColor: 'yellow',
+  },
+
+  todaysContainer: {
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    marginTop: 40,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 10,
+  },
+  description: {
+    fontSize: 13,
+    color: '#656b76',
+    textAlign: 'center',
+    width: 378,
+    lineHeight: 22,
+    letterSpacing: -0.12,
+  },
+  loginView: {
+    marginTop: 50,
+    alignItems: 'center',
+    gap: 30,
   },
 });
 

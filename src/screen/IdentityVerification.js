@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import InfoIcon from '../../src/assets/icon/info.svg';
 import Input from '../components/Input';
@@ -61,7 +61,7 @@ const Identity = () => {
             <Text style={styles.textFile}> Upload a file</Text>
           </View>
         </View>
-        <Button text={'Next'} />
+        <Button text={'Next'} buttonStyle={{width: 350, alignSelf: 'center'}} />
       </>
     </SafeAreaView>
   );
