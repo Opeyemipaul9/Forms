@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   main: {
     marginLeft: 19,
     marginRight: 19,
-    gap: 30,
+    gap: 20,
   },
   container: {
     alignItems: 'center',
@@ -219,9 +219,37 @@ const styles = StyleSheet.create({
     letterSpacing: -0.12,
   },
   loginView: {
-    marginTop: 50,
+    marginTop: 30,
     alignItems: 'center',
-    gap: 30,
+    justifyContent: 'center',
+    gap: 15,
+  },
+  biometricView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 80,
+    gap: 15,
+  },
+  inputParent: {
+    flexDirection: 'column',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  labelInput: {
+    marginBottom: 10,
+    color: '#979797',
+  },
+  input: {
+    color: '#1A1A1A',
+    flex: 1,
+  },
+  labelContainer: {
+    padding: 10,
+    backgroundColor: '#f9fafa',
+    borderRadius: 8,
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 

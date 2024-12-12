@@ -6,9 +6,14 @@ import Identity from './src/screen/IdentityVerification';
 import BottomModal from './src/components/BottomModal';
 import Homepage from './src/components/walkthrough';
 import Business from './src/components/businessInformation';
+import Login from './src/screen/LoginPage';
+import Create from './src/screen/createAccount';
+import Verify from './src/screen/Verify';
+import BottomStage from './src/components/bottomStage';
+
 // import Jameson from './src/components/gradients';
 
 const App = () => {
-  return <Business />;
+  return <BottomStage stage={2} />;
 };
 export default App;

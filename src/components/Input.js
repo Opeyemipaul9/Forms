@@ -1,11 +1,13 @@
 import React, {FC, ReactElement} from 'react';
 import {View, Text, TextInput, StyleSheet, TextInputProps} from 'react-native';
+// import styles from '../screen/styles';
 
-const Input = ({label, rightComponent, ...inputProps}) => {
+const Input = ({label, leftComponent, rightComponent, ...inputProps}) => {
   return (
     <View style={styles.container}>
+      {leftComponent ? leftComponent : null}
       <View style={styles.inputParent}>
-        <Text style={styles.title}>{label}</Text>
+        <Text style={styles.labelInput}>{label}</Text>
         <TextInput style={styles.input} {...inputProps} />
       </View>
       {rightComponent ? rightComponent : null}
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     color: '#1A1A1A',
     flex: 1,
   },
-  title: {
+  labelInput: {
     marginBottom: 10,
     color: '#979797',
   },
