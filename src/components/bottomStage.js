@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import styles from '../screen/styles';
+import Button from './Button';
 
 const BottomStage = ({stage}) => {
   const progressArray = [1, 2, 3, 4, 5];
@@ -9,12 +10,13 @@ const BottomStage = ({stage}) => {
       <View
         key={index}
         style={[
-          styles.progressWidth,
-          stage > index ? styles.active : styles.inactive,
+          styles.bottomProgressWidth,
+
+          stage > index ? styles.activeBottom : styles.inactiveBottom,
         ]}></View>
     );
   });
-  return <View style={styles.progressFull}>{progressStages}</View>;
+  return <View style={styles.bottomProgressFull}>{progressStages}</View>;
 };
 
 export default BottomStage;

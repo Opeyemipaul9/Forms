@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   main: {
     marginLeft: 19,
     marginRight: 19,
-    gap: 20,
   },
   container: {
     alignItems: 'center',
@@ -18,10 +17,26 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 7,
     paddingRight: 7,
+    marginBottom: 30,
+    width: 351,
   },
   progressFull: {
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flexDirection: 'row',
+  },
+  bottomProgressFull: {
+    width: screenWidth,
+    flexDirection: 'row',
+  },
+  bottomProgressWidth: {
+    width: '22%',
+    height: 3,
+  },
+  activeBottom: {
+    backgroundColor: 'green',
+  },
+  inactiveBottom: {
+    backgroundColor: '#d9d9d9',
   },
 
   progressWidth: {
@@ -40,6 +55,7 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     letterSpacing: -0.12,
     color: '#50555E',
+    fontWeight: 'bold',
   },
   miniContainer: {
     alignItems: 'center',
@@ -52,9 +68,7 @@ const styles = StyleSheet.create({
   identityText: {
     fontSize: 18,
     color: '#1A1C1F',
-    lineHeight: 26,
-    // letterSpacing: -0.2,
-    fontWeight: '600',
+    // fontWeight: 'bold',
     // marginLeft: 88,
     // marginRight: 73,
     textAlign: 'center',
@@ -64,7 +78,7 @@ const styles = StyleSheet.create({
     color: '#50555E',
     lineHeight: 21,
     letterSpacing: -0.12,
-    fontSize: 14,
+    fontSize: 15,
     textAlign: 'center',
     fontFamily: 'MatterSQ-Regular',
   },
@@ -118,6 +132,21 @@ const styles = StyleSheet.create({
     // marginRight: 24,
     // width: 100,
   },
+
+  buttonSecond: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 58,
+    borderRadius: 8,
+    backgroundColor: '#F9FAFA',
+  },
+  buttonSecondText: {
+    fontSize: 14,
+    color: '#1A1A1A',
+    lineHeight: 23,
+    letterSpacing: -0.12,
+  },
+
   buttonText: {
     fontSize: 14,
     color: '#F9FAFA',
@@ -152,8 +181,8 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     marginBottom: -15,
     paddingBottom: 25,
-    borderWidth: 2,
-    borderColor: 'red',
+    // borderWidth: 2,
+    // borderColor: 'red',
     width: screenWidth,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
@@ -250,6 +279,10 @@ const styles = StyleSheet.create({
     height: 60,
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  bottomCotainer: {
+    justifyContent: 'flex-end',
+    flex: 1,
   },
 });
 

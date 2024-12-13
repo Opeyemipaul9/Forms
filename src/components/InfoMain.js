@@ -4,10 +4,10 @@ import styles from '../screen/styles';
 
 const Info = ({textPrimary, textSec, rightComponent, leftComponent}) => {
   return (
-    <View>
+    <View style={{marginBottom: 50}}>
       <View style={styles.miniContainer}>
         {rightComponent ? rightComponent : <View />}
-        <View>
+        <View style={{gap: 10}}>
           <Text style={styles.identityText}> {textPrimary}</Text>
           <Text style={styles.about}> {textSec} </Text>
         </View>

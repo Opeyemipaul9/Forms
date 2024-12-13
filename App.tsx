@@ -9,11 +9,13 @@ import Business from './src/components/businessInformation';
 import Login from './src/screen/LoginPage';
 import Create from './src/screen/createAccount';
 import Verify from './src/screen/Verify';
-import BottomStage from './src/components/bottomStage';
+import BusinessInfo2 from './src/screen/businessInformation2';
+import Director from './src/screen/directorPage';
+import Complete from './src/components/completeProfile';
 
 // import Jameson from './src/components/gradients';
 
 const App = () => {
-  return <BottomStage stage={2} />;
+  return <Complete />;
 };
 export default App;

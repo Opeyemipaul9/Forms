@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     height: 60,
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 15,
   },
   inputParent: {
     flexDirection: 'column',
