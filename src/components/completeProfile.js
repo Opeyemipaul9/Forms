@@ -11,8 +11,10 @@ import Box from './bocx';
 import Checked from '../assets/icon/check_circle.svg';
 import Eclipse from '../assets/icon/Ellipse 37.svg';
 import Cancel from '../assets/icon/cancel.svg';
+import {useNavigation} from '@react-navigation/native';
 
 const Complete = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.main}>
@@ -49,6 +51,7 @@ const Complete = () => {
         <Button
           text={'Continue'}
           buttonStyle={{backgroundColor: '#7B828E', marginTop: 70}}
+          onPress={() => navigation.navigate('Business')}
         />
       </View>
     </SafeAreaView>

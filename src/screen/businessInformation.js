@@ -9,8 +9,10 @@ import Input from '../components/Input';
 import BottomStage from '../components/bottomStage';
 import Button from '../components/Button';
 import Dropdown from '../assets/icon/dropdown.svg';
+import {useNavigation} from '@react-navigation/native';
 
 const BusinessInfo = () => {
+  const navigation = useNavigation();
   return (
     <>
       <SafeAreaView style={styles.safe}>
@@ -46,7 +48,11 @@ const BusinessInfo = () => {
               paddingRight: 24,
             }}>
             <Text style={{color: '#7B828E', fontSize: 17}}> Step 2 of 5 </Text>
-            <Button text={'Next'} buttonStyle={{width: 96, height: 48}} />
+            <Button
+              text={'Next'}
+              buttonStyle={{width: 96, height: 48}}
+              onPress={() => navigation.navigate('Information')}
+            />
           </View>
         </View>
       </SafeAreaView>

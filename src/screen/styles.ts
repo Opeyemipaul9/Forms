@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   progressFull: {
     justifyContent: 'space-between',
     flexDirection: 'row',
+    marginBottom: 30,
   },
   bottomProgressFull: {
     width: screenWidth,
@@ -78,9 +79,6 @@ const styles = StyleSheet.create({
     fontFamily: 'MatterSQ-Regular',
   },
   upload: {
-    gap: 15,
-    marginLeft: 19,
-    marginRight: 68,
     width: 338,
     marginTop: 30,
   },
@@ -148,11 +146,27 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     letterSpacing: -0.12,
   },
+
+  modeText: {
+    fontSize: 11.5,
+    color: '#656b76',
+  },
+  texts: {
+    fontSize: 15,
+    fontWeight: '500',
+    left: -5,
+  },
   inputContainer: {
-    gap: 15,
-    marginLeft: 19,
-    marginRight: 19,
-    marginTop: 40, // optional //
+    gap: 5,
+  },
+  checkBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 150,
+  },
+  politicalContainer: {
+    gap: 5,
+    marginTop: 30,
   },
   checkContianer: {
     flexDirection: 'row',

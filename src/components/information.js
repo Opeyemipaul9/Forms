@@ -13,13 +13,13 @@ import Picture from '../assets/icon/picture2.svg';
 import Button from './Button';
 import {useNavigation} from '@react-navigation/native';
 
-const Business = () => {
+const Information = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView>
         <View style={styles.main}>
-          <Stages stage={1} />
+          <Stages stage={2} />
           <Header
             leftComponent={<Backdrop onPress={() => navigation.goBack()} />}
             rightComponent={<Infoicon />}
@@ -30,46 +30,46 @@ const Business = () => {
             textSec={'Tell us a bit about your business'}
           />
           <View style={styles.inputContainer}>
-            <Input label={'Business Name'} />
-            <Input label={'Business Description'} />
-            <Input label={'Company Type'} rightComponent={<Dropdown />} />
+            <Input label={'Business Address'} rightComponent={<Map />} />
+            <Input label={'Closest Landmark (optional)'} />
+            <Input label={'City'} rightComponent={<Dropdown />} />
+            <Input label={'State'} rightComponent={<Dropdown />} />
             <Input
-              label={'Industry (optional)'}
+              label={'Select Utility Bill)'}
               rightComponent={<Dropdown />}
             />
           </View>
-        </View>
-
-        {/* <View style={styles.upload}>
-          <View style={{width: 338}}>
-            <Text style={styles.valid}>
-              Upload a utitility bill (not older than 3months)
-            </Text>
-            <Text style={styles.support}>
-              Supported file includes JPEG ,PNG ,PDF and it must be less than
-              2mb
-            </Text>
+          <View style={styles.upload}>
+            <View>
+              <Text style={styles.valid}>
+                Upload utility bill (not older than 3months)
+              </Text>
+              <Text style={styles.support}>
+                Supported file includes JPEG ,PNG ,PDF and it must be less than
+                2mb
+              </Text>
+            </View>
+            <Button
+              iconComponent={<Picture />}
+              text={'Upload a file'}
+              buttonStyle={{
+                width: 150,
+                backgroundColor: 'black',
+                flexDirection: 'row',
+                gap: 5,
+                marginTop: 10,
+              }}
+            />
           </View>
-          <Button
-            iconComponent={<Picture />}
-            text={'Upload a file'}
-            buttonStyle={{
-              width: 150,
-              backgroundColor: 'black',
-              flexDirection: 'row',
-              gap: 5,
-              marginTop: 10,
-            }}
-          />
-        </View> */}
+        </View>
         <Button
           text={'Next'}
-          buttonStyle={{width: 350, alignSelf: 'center', marginTop: 200}}
-          onPress={() => navigation.navigate('Information')}
+          buttonStyle={{width: 350, alignSelf: 'center', marginTop: 50}}
+          onPress={() => navigation.navigate('Personal')}
         />
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default Business;
+export default Information;
