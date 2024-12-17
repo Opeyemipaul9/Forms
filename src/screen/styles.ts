@@ -8,17 +8,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   main: {
-    marginLeft: 19,
-    marginRight: 19,
+    marginLeft: 20,
+    marginRight: 20,
   },
   container: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingLeft: 7,
-    paddingRight: 7,
     marginBottom: 30,
-    width: 351,
   },
   progressFull: {
     justifyContent: 'space-between',
@@ -53,9 +50,7 @@ const styles = StyleSheet.create({
   firstText: {
     fontSize: 15,
     lineHeight: 23,
-    letterSpacing: -0.12,
-    color: '#50555E',
-    fontWeight: 'bold',
+    color: '#black',
   },
   miniContainer: {
     alignItems: 'center',

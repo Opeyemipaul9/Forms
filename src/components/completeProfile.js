@@ -4,41 +4,53 @@ import styles from '../screen/styles';
 import Header from './Header';
 import Info from './InfoMain';
 import Close from '../assets/icon/close.svg';
-import Input from './Input';
-import Check from './checkbox';
 import Button from './Button';
-import Dropdown from '../assets/icon/dropdown.svg';
-import Calendar from '../assets/icon/calendar.svg';
+import InfoIcon from '../assets/icon/info.svg';
+import Artboard from '../assets/icon/Artboard.svg';
+import Box from './bocx';
+import Checked from '../assets/icon/check_circle.svg';
+import Eclipse from '../assets/icon/Ellipse 37.svg';
+import Cancel from '../assets/icon/cancel.svg';
 
 const Complete = () => {
   return (
-    <SafeAreaView style={styles.safe}>
-      <View style={{flex: 1}}>
-        <View style={styles.modalView}>
-          <Info
-            textPrimary={'Complete Profile'}
-            textSec={`Let's get to know you a bit more`}
-            leftComponent={'Step 1 of 3'}
-            rightComponent={<Close />}
-          />
-          <Input label={'Nationality'} />
-          <Input label={'Gender'} rightComponent={<Dropdown />} />
-          <Input label={'Date of birth'} rightComponent={<Calendar />} />
-          <Input label={'Enter BVN'} />
-          <View style={{gap: 10, marginTop: 30}}>
-            <Text> Political Exposure </Text>
-            <Text style={{fontSize: 13, color: '#656B76'}}>
-              Have you or anyone associated with you ever had a political office
-              in any country?
-            </Text>
-          </View>
-          <View style={{flexDirection: 'row', gap: 50}}>
-            <Check text={'Yes'} />
-            <Check text={'No'} />
-          </View>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={styles.main}>
+        <Header
+          text={'Business Information'}
+          leftComponent={<Close />}
+          rightComponent={<InfoIcon />}
+        />
+        <Info
+          textPrimary={'Have you registered your business?'}
+          textSec={
+            'This information will be used to personalize your experience on Brass'
+          }
+        />
+        <View style={{alignItems: 'center', marginBottom: 30}}>
+          <Artboard />
         </View>
+        <Box
+          rightComponent={<Checked />}
+          TextPrimary={'Yes, my business is registered'}
+          TextSecondary={
+            'My business is registered and i have my legal documents ready'
+          }
+          leftComponent={<Eclipse />}
+        />
+        <Box
+          rightComponent={<Cancel />}
+          TextPrimary={'Yes, my business is registered'}
+          TextSecondary={
+            'My business is registered and i have my legal documents ready'
+          }
+          leftComponent={<Eclipse />}
+        />
+        <Button
+          text={'Continue'}
+          buttonStyle={{backgroundColor: '#7B828E', marginTop: 70}}
+        />
       </View>
-      <Button text={'Next'} buttonStyle={{width: 350, alignSelf: 'center'}} />
     </SafeAreaView>
   );
 };
