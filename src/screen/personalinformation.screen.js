@@ -13,6 +13,8 @@ import Info from '../components/InfoMain';
 import {useNavigation} from '@react-navigation/native';
 import Button from '../components/Button';
 import Political from '../components/politicalexposure';
+import Rounded from '../assets/icon/rounded.svg';
+import Heat from '../assets/icon/mode_heat.svg';
 
 const PersonalInformation = () => {
   const navigation = useNavigation();
@@ -49,6 +51,88 @@ const PersonalInformation = () => {
             <Input label="Date of Birth" rightComponent={<Calendar />} />
             <Input label="Enter BVN" />
           </View>
+          <View style={{gap: 10, marginTop: 30}}>
+            <Text style={{fontSize: 15, fontWeight: '500'}}>
+              Verification Methods
+            </Text>
+            <Text style={{fontSize: 12, color: '#656b76'}}>
+              Where would you like to receive your BVN verification code?
+            </Text>
+            <View style={{gap: 10, marginTop: 20}}>
+              <View style={{flexDirection: 'row', gap: 5}}>
+                <Rounded />
+                <Text style={{fontSize: 13}}>
+                  Send a verification code to 0810**94
+                </Text>
+              </View>
+              <Text
+                style={{
+                  left: 20,
+                  textDecorationLine: 'underline',
+                  fontWeight: '500',
+                }}>
+                Send to an alternative phone number{' '}
+              </Text>
+            </View>
+
+            <View style={{gap: 10, marginTop: 20}}>
+              <View style={{flexDirection: 'row', gap: 5}}>
+                <Rounded />
+                <Text style={{fontSize: 13}}>
+                  Send a verification code to james***re@gmail.com
+                </Text>
+              </View>
+              <Text
+                style={{
+                  left: 20,
+                  textDecorationLine: 'underline',
+                  fontWeight: '500',
+                }}>
+                Send to an alternative email address
+              </Text>
+            </View>
+            <View
+              style={{
+                backgroundColor: '#E2EDE2',
+                borderRadius: 8,
+                padding: 15,
+                height: 64,
+                marginTop: 20,
+              }}>
+              <View
+                style={{
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  width: 320,
+                  gap: 5,
+                  justifyContent: 'space-between',
+                }}>
+                <Heat />
+                <Text style={{fontSize: 13}}>
+                  Use the {''}
+                  <Text style={{fontWeight: '600'}}>
+                    'skip automatic verification'{' '}
+                  </Text>
+                  if you do not have access to the number or email provided.
+                </Text>
+              </View>
+            </View>
+            <View style={{gap: 10, marginTop: 20}}>
+              <View style={{flexDirection: 'row', gap: 5}}>
+                <Rounded />
+                <Text style={{fontSize: 13}}>Skip automatic verification</Text>
+              </View>
+              <Text
+                style={{
+                  left: 20,
+                  textDecorationLine: 'underline',
+                  fontWeight: '500',
+                }}>
+                if the above options are unavailable
+              </Text>
+            </View>
+          </View>
+
           <Political />
 
           <Button

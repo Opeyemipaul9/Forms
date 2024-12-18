@@ -7,6 +7,7 @@ import Info from './InfoMain';
 import Codes from './codeBVN';
 import {useNavigation} from '@react-navigation/native';
 import Button from './Button';
+import {OtpInput} from 'react-native-otp-entry';
 
 const Verify = () => {
   const navigation = useNavigation();
@@ -23,12 +24,30 @@ const Verify = () => {
             'We sent an email to philip@trybass.com containing a 6-digit code , please enter it below, Note that the code will expire in 10 minutes'
           }
         />
-        <Codes />
-
+        *
+        <OtpInput
+          numberOfDigits={6}
+          focusColor="green"
+          autoFocus={false}
+          hideStick={true}
+          placeholder="******"
+          blurOnFilled={true}
+          disabled={false}
+          type="numeric"
+          secureTextEntry={false}
+          focusStickBlinkingDuration={500}
+          onFocus={() => console.log('Focused')}
+          onBlur={() => console.log('Blurred')}
+          onTextChange={text => console.log(text)}
+          onFilled={text => console.log(`OTP is ${text}`)}
+          textInputProps={{
+            accessibilityLabel: 'One-Time Password',
+          }}
+        />
         <View style={styles.verifyContainer}>
           <Text style={{fontSize: 12, color: '#50555E'}}>
             Don't see a code?
-            <Text style={{color: '#1FAD64'}}>Resend code</Text>{' '}
+            <Text style={{color: '#1FAD64'}}> Resend code </Text>{' '}
           </Text>
           <Text style={{color: '#D9D9D9', fontSize: 12}}> 0:00</Text>
         </View>
@@ -41,5 +60,6 @@ const Verify = () => {
     </SafeAreaView>
   );
 };
+9;
 
 export default Verify;

@@ -5911,6 +5911,11 @@ react-native-modal@^13.0.1:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
+react-native-otp-entry@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/react-native-otp-entry/-/react-native-otp-entry-1.8.1.tgz#e9ee5df57cbd32580b23f55a6db5a37b991c11cd"
+  integrity sha512-uN5BZNzh5YkU9rNzUI1hFQxaz4R6PAVnDN+udB3fblt+XJgqTfVz+KEx8Z67/+Qga87m747oFysKOX1gI8UzLA==
+
 react-native-safe-area-context@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.0.0.tgz#0f28f3b406d4466c6afdaaa615198d12741e88b5"

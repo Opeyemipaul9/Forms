@@ -7,6 +7,7 @@ import Information from './src/components/information';
 import PersonalInformation from './src/screen/personalinformation.screen';
 import Verify from './src/components/Verify';
 import Successful from './src/components/BvnVerified';
+import Genesis from './src/components/Genesis';
 
 // import Information from './src/screen/information';
 
