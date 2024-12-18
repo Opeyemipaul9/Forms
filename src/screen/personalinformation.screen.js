@@ -50,7 +50,12 @@ const PersonalInformation = () => {
             <Input label="Enter BVN" />
           </View>
           <Political />
-          <Button text={'Next'} buttonStyle={{marginTop: 100}} />
+
+          <Button
+            text={'Next'}
+            buttonStyle={{marginTop: 100}}
+            onPress={() => navigation.navigate('Verify')}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

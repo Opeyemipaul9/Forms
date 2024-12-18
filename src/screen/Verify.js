@@ -14,15 +14,9 @@ const Verify = () => {
             text={'Verify your email address'}
             leftComponent={<Backdrop />}
           />
-          <Info
-            textSec={
-              'We sent an email to philip@trybass.com containing a 6-digit code , please enter it below. Note that the code will expire in 10 minutes'
-            }
-          />
+          <Text style={{width: 318, fontSize: 14}}> </Text>
         </View>
       </SafeAreaView>
     </>
   );
 };
-
-export default Verify;

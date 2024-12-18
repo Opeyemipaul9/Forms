@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     // marginRight: 20,
     // marginLeft: 20,
     marginBottom: 10,
+
     justifyContent: 'space-between',
   },
   identityText: {
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
     color: '#50555E',
     lineHeight: 21,
     letterSpacing: -0.12,
-    fontSize: 15,
+    fontSize: 14,
     textAlign: 'center',
     fontFamily: 'MatterSQ-Regular',
   },
@@ -202,6 +203,44 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     color: '#7B828E',
     // marginRight: -10,
+  },
+  sucessContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 20,
+  },
+  sucessView: {
+    alignItems: 'center',
+    width: 259,
+    gap: 10,
+  },
+  verifyContainer: {
+    alignItems: 'center',
+    marginTop: 50,
+    gap: 5,
+  },
+  textSuccess: {
+    color: 'black',
+    fontWeight: '700',
+  },
+  codeBoxContainer: {
+    flexDirection: 'row',
+    gap: 10,
+    justifyContent: 'center',
+  },
+  textBox: {
+    fontSize: 35,
+    color: '#1A1C1F',
+    lineHeight: 38,
+  },
+  codeBox: {
+    height: 60,
+    width: 48,
+    backgroundColor: '#F9FAFA',
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   testimonial: {
     fontSize: 15,

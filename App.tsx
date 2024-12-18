@@ -5,6 +5,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Business from './src/components/businessInformation';
 import Information from './src/components/information';
 import PersonalInformation from './src/screen/personalinformation.screen';
+import Verify from './src/components/Verify';
+import Successful from './src/components/BvnVerified';
 
 // import Information from './src/screen/information';
 
@@ -32,6 +34,16 @@ const App = () => {
         <Stack.Screen
           name="Personal"
           component={PersonalInformation}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Verify"
+          component={Verify}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Successful"
+          component={Successful}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
