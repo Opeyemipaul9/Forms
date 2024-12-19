@@ -3,9 +3,8 @@ import {View, Text, SafeAreaView} from 'react-native';
 import styles from '../screen/styles';
 import Header from './Header';
 import Info from './InfoMain';
-import Close from '../assets/icon/close.svg';
+import Back from '../assets/icon/back.svg';
 import Button from './Button';
-import InfoIcon from '../assets/icon/info.svg';
 import Artboard from '../assets/icon/Artboard.svg';
 import Box from './bocx';
 import Checked from '../assets/icon/check_circle.svg';
@@ -20,8 +19,8 @@ const Complete = () => {
       <View style={styles.main}>
         <Header
           text={'Business Information'}
-          leftComponent={<Close />}
-          rightComponent={<InfoIcon />}
+          leftComponent={<Back onPress={() => navigation.goBack()} />}
+          rightComponent={<View />}
         />
         <Info
           textPrimary={'Have you registered your business?'}

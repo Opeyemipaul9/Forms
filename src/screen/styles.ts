@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.12,
   },
   loginView: {
-    marginTop: 30,
+    marginTop: 80,
     alignItems: 'center',
     justifyContent: 'center',
     gap: 15,
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
   biometricView: {
     justifyContent: 'center',
     alignItems: 'center',
-    top: 80,
+    top: 200,
     gap: 15,
   },
   inputParent: {
@@ -315,6 +315,10 @@ const styles = StyleSheet.create({
   labelInput: {
     marginBottom: 10,
     color: '#979797',
+  },
+  textBiometric: {
+    color: '#656b76',
+    fontSize: 12,
   },
   input: {
     color: '#1A1A1A',

@@ -27,7 +27,7 @@ const Verify = () => {
         *
         <OtpInput
           numberOfDigits={6}
-          focusColor="green"
+          focusColor="black"
           autoFocus={false}
           hideStick={true}
           placeholder="******"
