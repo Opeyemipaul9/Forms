@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, SafeAreaView, ScrollView, Image} from 'react-native';
 import styles from '../screen/styles';
 import Stages from './onboardingstage';
@@ -8,17 +8,75 @@ import Backdrop from '../assets/icon/back.svg';
 import Info from './InfoMain';
 import Map from '../assets/icon/location.svg';
 import Input from './Input';
-import Dropdown from '../assets/icon/dropdown.svg';
+import Dropdowns from '../assets/icon/dropdown.svg';
 import Picture from '../assets/icon/picture2.svg';
 import Button from './Button';
 import {useNavigation} from '@react-navigation/native';
 import DocumentPicker from 'react-native-document-picker';
 import PdfThumbnail from 'react-native-pdf-thumbnail';
+import DONT from '../assets/icon/dnd.svg';
+import {Country, State, City} from 'country-state-city';
+import {Dropdown} from 'react-native-element-dropdown';
 
 const Information = () => {
   const [file, setFile] = useState(null);
   const [previewUri, setPreviewUri] = useState('');
   const navigation = useNavigation();
+  const [selectedState, setSelectedState] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [state, setState] = useState([]);
+  const [city, setCity] = useState([]);
+  const [isFocus, setIsFocus] = useState(false);
+
+  const countryIsoCode = 'NG';
+
+  // Load country data
+
+  // useEffect(() => {
+  //   const loadCountries = () => {
+  //     const countryList = Country.getAllCountries().map(country => ({
+  //       label: country.name,
+  //       value: country.isoCode,
+  //       search: country.name,
+  //     }));
+  //     setCountry(countryList);
+  //   };
+  //   loadCountries();
+  // }, []);
+
+  // Load states from selected country
+
+  useEffect(() => {
+    const loadState = () => {
+      const stateList = State.getStatesOfCountry(countryIsoCode).map(state => ({
+        label: state.name,
+        value: state.isoCode,
+        search: state.name,
+      }));
+      setState(stateList);
+    };
+    loadState();
+  }, []);
+
+  // Load cities from selected states
+
+  useEffect(() => {
+    if (selectedState) {
+      const loadCities = () => {
+        const cityList = City.getCitiesOfState(
+          countryIsoCode,
+          selectedState,
+        ).map(city => ({
+          label: city.name,
+          value: city.isoCode,
+          search: city.name,
+        }));
+        setCity(cityList);
+      };
+      loadCities();
+    }
+  }, [selectedState]);
+
   const selectDoc = async () => {
     try {
       const doc = await DocumentPicker.pick({
@@ -34,13 +92,7 @@ const Information = () => {
       // Generate thumnail preview
       const thumbnail = await PdfThumbnail.generate(doc[0]?.uri, 0);
       setPreviewUri(thumbnail.uri);
-
-      console.log(doc);
-    } catch (err) {
-      if (DocumentPicker.isCancel(err))
-        console.log('user camcelled the upload', err);
-      else console.log('error picking document', err);
-    }
+    } catch (err) {}
   };
   return (
     <SafeAreaView style={styles.safe}>
@@ -59,11 +111,53 @@ const Information = () => {
           <View style={styles.inputContainer}>
             <Input label={'Business Address'} rightComponent={<Map />} />
             <Input label={'Closest Landmark (optional)'} />
-            <Input label={'City'} rightComponent={<Dropdown />} />
-            <Input label={'State'} rightComponent={<Dropdown />} />
+            <View style={styles.dropdowncontainer}>
+              <Dropdown
+                style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
+                data={state}
+                labelField="label"
+                valueField="value"
+                searchField="search"
+                placeholder="State"
+                placeholderStyle={styles.placeholderstyle}
+                inputSearchStyle={styles.inputSearchStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                iconStyle={styles.iconStyle}
+                value={selectedState}
+                maxHeight={300}
+                minHeight={100}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                onChange={item => {
+                  setSelectedState(item.value);
+                }}
+              />
+            </View>
+            <View style={styles.dropdowncontainer}>
+              <Dropdown
+                style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
+                data={city}
+                labelField="label"
+                valueField="value"
+                searchField="search"
+                placeholder="City"
+                placeholderStyle={styles.placeholderstyle}
+                inputSearchStyle={styles.inputSearchStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                iconStyle={styles.iconStyle}
+                value={selectedCity}
+                maxHeight={300}
+                minHeight={100}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                onChange={item => {
+                  setSelectedCity(item.value);
+                }}
+              />
+            </View>
             <Input
               label={'Select Utility Bill)'}
-              rightComponent={<Dropdown />}
+              rightComponent={<Dropdowns />}
             />
           </View>
           <View style={styles.upload}>
@@ -90,35 +184,17 @@ const Information = () => {
                 onPress={selectDoc}
               />
             ) : (
-              <View
-                style={{
-                  marginTop: 30,
-                  backgroundColor: '#D9D9D9',
-                  borderRadius: 8,
-                  height: 60,
-                }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: 5,
-                  }}>
+              <View style={styles.pdfView}>
+                <View style={styles.pdfmini}>
                   {previewUri ? (
                     <Image
                       source={{uri: previewUri}}
-                      style={{
-                        width: 40,
-                        height: 40,
-                        resizeMode: 'contain',
-                        borderRadius: 10,
-                        marginBottom: 10,
-                        top: 10,
-                      }}></Image>
+                      style={styles.pdfimage}></Image>
                   ) : (
                     <Text> generating thumbnail</Text>
                   )}
                   <Text> {file.name}</Text>
+                  <DONT onPress={() => setFile(null)} />
                 </View>
               </View>
             )}

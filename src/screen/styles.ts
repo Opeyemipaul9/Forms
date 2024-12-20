@@ -36,6 +36,53 @@ const styles = StyleSheet.create({
   inactiveBottom: {
     backgroundColor: '#d9d9d9',
   },
+  placeholderstyle: {
+    fontSize: 16,
+    color: '#979797',
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+    color: '#979797',
+  },
+  iconStyle: {
+    width: 25,
+    height: 25,
+    color: 'black',
+  },
+  dropdowncontainer: {
+    backgroundColor: '#f9fafa',
+    padding: 10,
+    height: 60,
+    justifyContent: 'center',
+    borderRadius: 8,
+  },
+  dropdown: {
+    borderColor: 'gray',
+    borderRadius: 8,
+  },
+  inputSearchStyle: {
+    height: 40,
+    borderRadius: 8,
+    fontSize: 16,
+  },
+  pdfView: {
+    marginTop: 30,
+    backgroundColor: '#D9D9D9',
+    borderRadius: 8,
+    height: 60,
+  },
+  pdfimage: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
+    marginBottom: 20,
+    top: 10,
+  },
+  pdfmini: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
 
   progressWidth: {
     width: '18%',
@@ -158,7 +205,7 @@ const styles = StyleSheet.create({
     left: -5,
   },
   inputContainer: {
-    gap: 5,
+    gap: 10,
   },
   checkBox: {
     flexDirection: 'row',

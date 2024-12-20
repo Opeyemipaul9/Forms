@@ -6,17 +6,29 @@ import Header from './Header';
 import Infoicon from '../assets/icon/info.svg';
 import Backdrop from '../assets/icon/back.svg';
 import Info from './InfoMain';
-import Map from '../assets/icon/location.svg';
 import Input from './Input';
-import Dropdown from '../assets/icon/dropdown.svg';
+import Dropdowns from '../assets/icon/dropdown.svg';
 import Picture from '../assets/icon/picture2.svg';
 import Button from './Button';
+import {Dropdown} from 'react-native-element-dropdown';
 import {useNavigation} from '@react-navigation/native';
-import {Picker} from '@react-native-picker/picker';
+
+const data = [
+  {label: 'NGO', value: 'NGO', search: 'NGO'},
+  {label: 'LLC', value: 'LLC', search: 'LLC'},
+  {label: 'PARTNERSHIP', value: 'PARTNERSHIP', search: 'PARTNERSHIP'},
+  {
+    label: 'SOLE-PROPRIETOR',
+    value: 'SOLE-PROPRIETOR',
+    search: 'SOLE-PROPRIETOR',
+  },
+];
 
 const Business = () => {
   const navigation = useNavigation();
-  const [selectedLanguage, setSelectedLanguage] = useState('');
+  const [value, setValue] = useState('');
+  const [isFocus, setIsFocus] = useState(false);
+
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView>
@@ -34,11 +46,34 @@ const Business = () => {
           <View style={styles.inputContainer}>
             <Input label={'Business Name'} />
             <Input label={'Business Description'} />
-            <Input label={'Company Type'} rightComponent={<Dropdown />} />
+            <Input label={'Company Type'} rightComponent={<Dropdowns />} />
             <Input
               label={'Industry (optional)'}
-              rightComponent={<Dropdown />}
+              rightComponent={<Dropdowns />}
             />
+            <View style={styles.dropdowncontainer}>
+              <Dropdown
+                style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
+                data={data}
+                labelField="label"
+                searchField="search"
+                valueField="value"
+                placeholder="Company Type"
+                placeholderStyle={styles.placeholderstyle}
+                inputSearchStyle={styles.inputSearchStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                iconStyle={styles.iconStyle}
+                value={value}
+                maxHeight={300}
+                minHeight={100}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                onChange={item => {
+                  setValue(item.value);
+                  setIsFocus(false);
+                }}
+              />
+            </View>
           </View>
         </View>
         <Button
