@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, SafeAreaView, ScrollView, Image} from 'react-native';
+import {View, Text, SafeAreaView, ScrollView, Image, Alert} from 'react-native';
 import styles from '../screen/styles';
 import Stages from './onboardingstage';
 import Header from './Header';
@@ -22,29 +22,37 @@ const Information = () => {
   const [file, setFile] = useState(null);
   const [previewUri, setPreviewUri] = useState('');
   const navigation = useNavigation();
-  const [selectedState, setSelectedState] = useState(null);
-  const [selectedCity, setSelectedCity] = useState(null);
   const [state, setState] = useState([]);
   const [city, setCity] = useState([]);
   const [isFocus, setIsFocus] = useState(false);
+  const [form, setForm] = useState({
+    address: '',
+    landmark: '',
+    phone: '',
+    email: '',
+    state: '',
+    city: '',
+    bills: '',
+  });
+  const bills = [
+    {label: 'Electric Bill', value: 'Electric Bill', search: 'Electric Bill'},
+    {label: 'Cable Bill', value: 'Cable Bill', search: 'Cable Bill'},
+  ];
+
+  const handleChange = (field, value) => {
+    setForm(prevState => ({...prevState, [field]: value}));
+  };
+
+  const handleSubmit = () => {
+    const {address, landmark, phone, email, state} = form;
+    if (!address || !landmark || !phone || !email || !state) {
+      Alert.alert('Error', 'please fill in all the fields');
+    } else {
+      navigation.navigate('Personal');
+    }
+  };
 
   const countryIsoCode = 'NG';
-
-  // Load country data
-
-  // useEffect(() => {
-  //   const loadCountries = () => {
-  //     const countryList = Country.getAllCountries().map(country => ({
-  //       label: country.name,
-  //       value: country.isoCode,
-  //       search: country.name,
-  //     }));
-  //     setCountry(countryList);
-  //   };
-  //   loadCountries();
-  // }, []);
-
-  // Load states from selected country
 
   useEffect(() => {
     const loadState = () => {
@@ -61,21 +69,20 @@ const Information = () => {
   // Load cities from selected states
 
   useEffect(() => {
-    if (selectedState) {
+    if (form.state) {
       const loadCities = () => {
-        const cityList = City.getCitiesOfState(
-          countryIsoCode,
-          selectedState,
-        ).map(city => ({
-          label: city.name,
-          value: city.isoCode,
-          search: city.name,
-        }));
+        const cityList = City.getCitiesOfState(countryIsoCode, form.state).map(
+          city => ({
+            label: city.name,
+            value: city.isoCode,
+            search: city.name,
+          }),
+        );
         setCity(cityList);
       };
       loadCities();
     }
-  }, [selectedState]);
+  }, [form.state]);
 
   const selectDoc = async () => {
     try {
@@ -109,8 +116,27 @@ const Information = () => {
             textSec={'Tell us a bit about your business'}
           />
           <View style={styles.inputContainer}>
-            <Input label={'Business Address'} rightComponent={<Map />} />
-            <Input label={'Closest Landmark (optional)'} />
+            <Input
+              label={'Business Address'}
+              value={form.address}
+              onChangeText={value => handleChange('address', value)}
+              rightComponent={<Map />}
+            />
+            <Input
+              label={'Closest Landmark (optional)'}
+              value={form.landmark}
+              onChangeText={value => handleChange('landmark', value)}
+            />
+            <Input
+              label={'Phone Number'}
+              value={form.phone}
+              onChangeText={value => handleChange('phone', value)}
+            />
+            <Input
+              label={'Email address'}
+              value={form.email}
+              onChange={value => handleChange('email', value)}
+            />
             <View style={styles.dropdowncontainer}>
               <Dropdown
                 style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
@@ -123,13 +149,13 @@ const Information = () => {
                 inputSearchStyle={styles.inputSearchStyle}
                 selectedTextStyle={styles.selectedTextStyle}
                 iconStyle={styles.iconStyle}
-                value={selectedState}
+                value={form.state}
                 maxHeight={300}
                 minHeight={100}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 onChange={item => {
-                  setSelectedState(item.value);
+                  handleChange('state', item.value);
                 }}
               />
             </View>
@@ -145,20 +171,38 @@ const Information = () => {
                 inputSearchStyle={styles.inputSearchStyle}
                 selectedTextStyle={styles.selectedTextStyle}
                 iconStyle={styles.iconStyle}
-                value={selectedCity}
+                value={form.city}
                 maxHeight={300}
                 minHeight={100}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 onChange={item => {
-                  setSelectedCity(item.value);
+                  handleChange('city', item.value);
                 }}
               />
             </View>
-            <Input
-              label={'Select Utility Bill)'}
-              rightComponent={<Dropdowns />}
-            />
+            <View style={styles.dropdowncontainer}>
+              <Dropdown
+                style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
+                data={bills}
+                labelField="label"
+                valueField="value"
+                searchField="search"
+                placeholder="Utility Bill"
+                placeholderStyle={styles.placeholderstyle}
+                inputSearchStyle={styles.inputSearchStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                iconStyle={styles.iconStyle}
+                value={form.city}
+                maxHeight={300}
+                minHeight={100}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                onChange={item => {
+                  handleChange('bills', item.value);
+                }}
+              />
+            </View>
           </View>
           <View style={styles.upload}>
             <View>
@@ -203,7 +247,7 @@ const Information = () => {
         <Button
           text={'Next'}
           buttonStyle={{width: 350, alignSelf: 'center', marginTop: 50}}
-          onPress={() => navigation.navigate('Personal')}
+          onPress={handleSubmit}
         />
       </ScrollView>
     </SafeAreaView>

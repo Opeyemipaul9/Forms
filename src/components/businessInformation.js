@@ -46,7 +46,7 @@ const Business = () => {
           <View style={styles.inputContainer}>
             <Input label={'Business Name'} />
             <Input label={'Business Description'} />
-            <Input label={'Company Type'} rightComponent={<Dropdowns />} />
+
             <Input
               label={'Industry (optional)'}
               rightComponent={<Dropdowns />}

@@ -207,6 +207,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     gap: 10,
   },
+
   checkBox: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -358,6 +359,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 1,
     justifyContent: 'center',
+  },
+  inputView: {
+    padding: 10,
+    backgroundColor: '#f9fafa',
+    borderRadius: 8,
+    height: 65,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   labelInput: {
     marginBottom: 10,

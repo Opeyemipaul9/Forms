@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import Input from '../components/Input';
 import InfoIcon from '../../src/assets/icon/info.svg';
 import Calendar from '../../src/assets/icon/calendar.svg';
-import Dropdown from '../../src/assets/icon/dropdown.svg';
+import Dropdowns from '../../src/assets/icon/dropdown.svg';
 import Check from '../components/checkbox';
 import Backdrop from '../assets/icon/back.svg';
 import Header from '../components/Header';
@@ -15,8 +15,24 @@ import Button from '../components/Button';
 import Political from '../components/politicalexposure';
 import Rounded from '../assets/icon/rounded.svg';
 import Heat from '../assets/icon/mode_heat.svg';
+import {Dropdown} from 'react-native-element-dropdown';
 
 const PersonalInformation = () => {
+  const data = [
+    {
+      label: 'Male',
+      value: 'Male',
+      search: 'Male',
+    },
+    {
+      label: 'Female',
+      value: 'Female',
+      search: 'Female',
+    },
+  ];
+  const [value, setValue] = useState('');
+  const [isFocus, setIsFocus] = useState(false);
+
   const navigation = useNavigation();
   const [values, setValues] = useState({
     nationality: '',
@@ -47,7 +63,30 @@ const PersonalInformation = () => {
                 }));
               }}
             />
-            <Input label="Gender" rightComponent={<Dropdown />} />
+
+            <View style={styles.dropdowncontainer}>
+              <Dropdown
+                style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
+                data={data}
+                labelField="label"
+                searchField="search"
+                valueField="value"
+                placeholder="Gender"
+                placeholderStyle={styles.placeholderstyle}
+                inputSearchStyle={styles.inputSearchStyle}
+                selectedTextStyle={styles.selectedTextStyle}
+                iconStyle={styles.iconStyle}
+                value={value}
+                maxHeight={300}
+                minHeight={100}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                onChange={item => {
+                  setValue(item.value);
+                  setIsFocus(false);
+                }}
+              />
+            </View>
             <Input label="Date of Birth" rightComponent={<Calendar />} />
             <Input label="Enter BVN" />
           </View>
