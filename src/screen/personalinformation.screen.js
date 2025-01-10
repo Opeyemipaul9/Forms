@@ -17,7 +17,17 @@ import Rounded from '../assets/icon/rounded.svg';
 import Heat from '../assets/icon/mode_heat.svg';
 import {Dropdown} from 'react-native-element-dropdown';
 
-const PersonalInformation = () => {
+const PersonalInformation = ({route}) => {
+  const {phone, email} = route.params;
+
+  const numbers = () => {
+    return phone.slice(0, 5) + '****' + phone.slice(9);
+  };
+
+  const emailSlip = () => {
+    return email.slice(0, 2) + '******' + email.slice(-11);
+  };
+
   const data = [
     {
       label: 'Male',
@@ -101,7 +111,7 @@ const PersonalInformation = () => {
               <View style={{flexDirection: 'row', gap: 5}}>
                 <Rounded />
                 <Text style={{fontSize: 13}}>
-                  Send a verification code to 0810**94
+                  Send a verification code to {numbers()}
                 </Text>
               </View>
               <Text
@@ -118,7 +128,7 @@ const PersonalInformation = () => {
               <View style={{flexDirection: 'row', gap: 5}}>
                 <Rounded />
                 <Text style={{fontSize: 13}}>
-                  Send a verification code to james***re@gmail.com
+                  Send a verification code to {emailSlip()}
                 </Text>
               </View>
               <Text

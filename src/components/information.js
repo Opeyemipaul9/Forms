@@ -48,7 +48,7 @@ const Information = () => {
     if (!address || !landmark || !phone || !email || !state) {
       Alert.alert('Error', 'please fill in all the fields');
     } else {
-      navigation.navigate('Personal');
+      navigation.navigate('Personal', {phone: form.phone, email: form.email});
     }
   };
 
@@ -135,7 +135,7 @@ const Information = () => {
             <Input
               label={'Email address'}
               value={form.email}
-              onChange={value => handleChange('email', value)}
+              onChangeText={value => handleChange('email', value)}
             />
             <View style={styles.dropdowncontainer}>
               <Dropdown
