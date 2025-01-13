@@ -8,10 +8,10 @@ import Backdrop from '../assets/icon/back.svg';
 import Info from './InfoMain';
 import Input from './Input';
 import Dropdowns from '../assets/icon/dropdown.svg';
-import Picture from '../assets/icon/picture2.svg';
 import Button from './Button';
 import {Dropdown} from 'react-native-element-dropdown';
 import {useNavigation} from '@react-navigation/native';
+import businessStore from '../store/store';
 
 const data = [
   {label: 'NGO', value: 'NGO', search: 'NGO'},
@@ -23,11 +23,15 @@ const data = [
     search: 'SOLE-PROPRIETOR',
   },
 ];
-
 const Business = () => {
   const navigation = useNavigation();
-  const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
+  const {businessForm, setBusinessForm} = businessStore();
+
+  //  Handling of input change
+  const handleChange = (name, value) => {
+    setBusinessForm({[name]: value});
+  };
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -44,11 +48,24 @@ const Business = () => {
             textSec={'Tell us a bit about your business'}
           />
           <View style={styles.inputContainer}>
-            <Input label={'Business Name'} />
-            <Input label={'Business Description'} />
+            <Input
+              label={'Business Name'}
+              name={'name'}
+              value={businessForm.name}
+              onChangeText={value => handleChange('name', value)}
+            />
+            <Input
+              label={'Business Description'}
+              name="description"
+              value={businessForm.description}
+              onChangeText={value => handleChange('description', value)}
+            />
 
             <Input
               label={'Industry (optional)'}
+              name={'industry'}
+              value={businessForm.industry}
+              onChangeText={value => handleChange('industry', value)}
               rightComponent={<Dropdowns />}
             />
             <View style={styles.dropdowncontainer}>
@@ -58,20 +75,18 @@ const Business = () => {
                 labelField="label"
                 searchField="search"
                 valueField="value"
+                name="CompanyType"
                 placeholder="Company Type"
                 placeholderStyle={styles.placeholderstyle}
                 inputSearchStyle={styles.inputSearchStyle}
                 selectedTextStyle={styles.selectedTextStyle}
                 iconStyle={styles.iconStyle}
-                value={value}
+                value={businessForm.companyType}
                 maxHeight={300}
                 minHeight={100}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
-                onChange={item => {
-                  setValue(item.value);
-                  setIsFocus(false);
-                }}
+                onChange={value => handleChange('companyType', value)}
               />
             </View>
           </View>

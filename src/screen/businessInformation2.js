@@ -53,15 +53,7 @@ const BusinessInfo2 = () => {
         </View>
         <View>
           <BottomStage stage={2} />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 120,
-              paddingLeft: 24,
-              paddingRight: 24,
-            }}>
+          <View style={styles.bottomStage}>
             <Text style={{color: '#7B828E', fontSize: 17}}> Step 2 of 5 </Text>
             <Button text={'Next'} buttonStyle={{width: 96, height: 48}} />
           </View>

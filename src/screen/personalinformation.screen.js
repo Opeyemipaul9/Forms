@@ -25,7 +25,7 @@ const PersonalInformation = ({route}) => {
   };
 
   const emailSlip = () => {
-    return email.slice(0, 2) + '******' + email.slice(-11);
+    return email.slice(0, 2) + '******' + email.slice(-12);
   };
 
   const data = [

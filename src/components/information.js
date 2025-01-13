@@ -8,15 +8,15 @@ import Backdrop from '../assets/icon/back.svg';
 import Info from './InfoMain';
 import Map from '../assets/icon/location.svg';
 import Input from './Input';
-import Dropdowns from '../assets/icon/dropdown.svg';
 import Picture from '../assets/icon/picture2.svg';
 import Button from './Button';
 import {useNavigation} from '@react-navigation/native';
 import DocumentPicker from 'react-native-document-picker';
 import PdfThumbnail from 'react-native-pdf-thumbnail';
 import DONT from '../assets/icon/dnd.svg';
-import {Country, State, City} from 'country-state-city';
+import {State, City} from 'country-state-city';
 import {Dropdown} from 'react-native-element-dropdown';
+import businessStore from '../store/store';
 
 const Information = () => {
   const [file, setFile] = useState(null);
@@ -25,30 +25,32 @@ const Information = () => {
   const [state, setState] = useState([]);
   const [city, setCity] = useState([]);
   const [isFocus, setIsFocus] = useState(false);
-  const [form, setForm] = useState({
-    address: '',
-    landmark: '',
-    phone: '',
-    email: '',
-    state: '',
-    city: '',
-    bills: '',
-  });
-  const bills = [
+
+  const utility = [
     {label: 'Electric Bill', value: 'Electric Bill', search: 'Electric Bill'},
     {label: 'Cable Bill', value: 'Cable Bill', search: 'Cable Bill'},
   ];
 
+  const {business, businessForm, addBusiness, setBusinessForm} =
+    businessStore();
+
   const handleChange = (field, value) => {
-    setForm(prevState => ({...prevState, [field]: value}));
+    setBusinessForm({[field]: value});
   };
 
-  const handleSubmit = () => {
-    const {address, landmark, phone, email, state} = form;
+  const handleSubmit = e => {
+    const {address, landmark, phone, email, state} = businessForm;
     if (!address || !landmark || !phone || !email || !state) {
       Alert.alert('Error', 'please fill in all the fields');
     } else {
-      navigation.navigate('Personal', {phone: form.phone, email: form.email});
+      e.preventDefault();
+      addBusiness();
+      Alert.alert('Business added successfully');
+      navigation.navigate('Personal', {
+        phone: businessForm.phone,
+        email: businessForm.email,
+      });
+      console.log(business);
     }
   };
 
@@ -69,20 +71,21 @@ const Information = () => {
   // Load cities from selected states
 
   useEffect(() => {
-    if (form.state) {
+    if (businessForm.state) {
       const loadCities = () => {
-        const cityList = City.getCitiesOfState(countryIsoCode, form.state).map(
-          city => ({
-            label: city.name,
-            value: city.isoCode,
-            search: city.name,
-          }),
-        );
+        const cityList = City.getCitiesOfState(
+          countryIsoCode,
+          businessForm.state,
+        ).map(city => ({
+          label: city.name,
+          value: city.name,
+          search: city.name,
+        }));
         setCity(cityList);
       };
       loadCities();
     }
-  }, [form.state]);
+  }, [businessForm.state]);
 
   const selectDoc = async () => {
     try {
@@ -118,23 +121,23 @@ const Information = () => {
           <View style={styles.inputContainer}>
             <Input
               label={'Business Address'}
-              value={form.address}
+              value={businessForm.address}
               onChangeText={value => handleChange('address', value)}
               rightComponent={<Map />}
             />
             <Input
               label={'Closest Landmark (optional)'}
-              value={form.landmark}
+              value={businessForm.landmark}
               onChangeText={value => handleChange('landmark', value)}
             />
             <Input
               label={'Phone Number'}
-              value={form.phone}
+              value={businessForm.phone}
               onChangeText={value => handleChange('phone', value)}
             />
             <Input
               label={'Email address'}
-              value={form.email}
+              value={businessForm.email}
               onChangeText={value => handleChange('email', value)}
             />
             <View style={styles.dropdowncontainer}>
@@ -149,14 +152,12 @@ const Information = () => {
                 inputSearchStyle={styles.inputSearchStyle}
                 selectedTextStyle={styles.selectedTextStyle}
                 iconStyle={styles.iconStyle}
-                value={form.state}
+                value={businessForm.state}
                 maxHeight={300}
                 minHeight={100}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
-                onChange={item => {
-                  handleChange('state', item.value);
-                }}
+                onChange={e => handleChange('state', e.value)}
               />
             </View>
             <View style={styles.dropdowncontainer}>
@@ -171,20 +172,18 @@ const Information = () => {
                 inputSearchStyle={styles.inputSearchStyle}
                 selectedTextStyle={styles.selectedTextStyle}
                 iconStyle={styles.iconStyle}
-                value={form.city}
+                value={businessForm.city}
                 maxHeight={300}
                 minHeight={100}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
-                onChange={item => {
-                  handleChange('city', item.value);
-                }}
+                onChange={e => handleChange('city', e.value)}
               />
             </View>
             <View style={styles.dropdowncontainer}>
               <Dropdown
                 style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
-                data={bills}
+                data={utility}
                 labelField="label"
                 valueField="value"
                 searchField="search"
@@ -193,13 +192,13 @@ const Information = () => {
                 inputSearchStyle={styles.inputSearchStyle}
                 selectedTextStyle={styles.selectedTextStyle}
                 iconStyle={styles.iconStyle}
-                value={form.city}
+                value={businessForm.utility}
                 maxHeight={300}
                 minHeight={100}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 onChange={item => {
-                  handleChange('bills', item.value);
+                  handleChange('utility', item.value);
                 }}
               />
             </View>

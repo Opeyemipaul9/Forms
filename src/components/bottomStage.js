@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import styles from '../screen/styles';
-import Button from './Button';
 
 const BottomStage = ({stage}) => {
   const progressArray = [1, 2, 3, 4, 5];

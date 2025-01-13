@@ -11,6 +11,14 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
   },
+  bottomStage: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: 120,
+    paddingLeft: 24,
+    paddingRight: 24,
+  },
   container: {
     alignItems: 'center',
     flexDirection: 'row',

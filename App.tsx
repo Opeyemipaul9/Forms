@@ -11,6 +11,7 @@ import Genesis from './src/components/Genesis';
 import Homepage from './src/components/walkthrough';
 import Login from './src/screen/LoginPage';
 import Create from './src/screen/createAccount';
+import Partner from './src/components/partner';
 
 // import Information from './src/screen/information';
 
@@ -20,6 +21,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Partner"
+          component={Partner}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Genesis"
           component={Genesis}
